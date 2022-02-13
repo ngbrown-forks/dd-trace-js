@@ -295,7 +295,7 @@ jobs:
       - run:
           name: Install dependencies
           command: |
-            export PLUGINS="bluebird|generic-pool|promise-js|promise|q|when"
+            export PLUGINS="bluebird|generic-pool|knex|promise-js|promise|q|when"
             node ./scripts/install_plugin_modules
       - run:
           name: Unit tests
@@ -491,8 +491,6 @@ jobs:
   node-http2: *node-plugin-base
 
   node-jest: *node-plugin-base
-
-  node-knex: *node-plugin-base
 
   node-koa: *node-plugin-base
 
@@ -787,7 +785,6 @@ workflows:
       - node-http2: *matrix-supported-node-versions
       - node-jest: *matrix-supported-node-versions
       - node-kafkajs: *matrix-supported-node-versions
-      - node-knex: *matrix-supported-node-versions
       - node-koa: *matrix-supported-node-versions
       # - node-limitd-client
       - node-memcached: *matrix-supported-node-versions
@@ -845,7 +842,6 @@ workflows:
             - node-http2
             - node-jest
             - node-kafkajs
-            - node-knex
             - node-koa
             # - node-limitd-client
             - node-memcached
