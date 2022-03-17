@@ -139,7 +139,7 @@ class MochaPlugin extends Plugin {
     if (testParametersString) {
       testSpanMetadata[TEST_PARAMETERS] = testParametersString
     }
-    const codeOwners = getCodeOwnersForFilename(testSpanMetadata[TEST_SUITE])
+    const codeOwners = getCodeOwnersForFilename(testSpanMetadata[TEST_SUITE], this.codeOwnersEntries)
 
     if (codeOwners) {
       testSpanMetadata[TEST_CODE_OWNERS] = codeOwners
